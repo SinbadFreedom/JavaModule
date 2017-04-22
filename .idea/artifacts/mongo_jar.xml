@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="mongo:jar">
+    <output-path>$PROJECT_DIR$/output/artifacts/mongo_jar</output-path>
+    <root id="archive" name="mongo.jar">
+      <element id="module-output" name="mongo" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/mongo/lib/mongo-java-driver-2.9.3.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

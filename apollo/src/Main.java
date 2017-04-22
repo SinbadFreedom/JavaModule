@@ -1,17 +1,11 @@
-import com.mongodb.BasicDBObject;
-
 public class Main {
 
     public static void main(String[] args) {
-        MongoController.getInstance().init();
+        ApolloController.getInstance().init();
         long t1 = System.currentTimeMillis();
 
-        String dbName = "db_test";
-        String colName = "col_test";
         for (int i = 0; i < 10000; i++) {
-//            MongoController.getInstance().insertBridge(dbName, colName, new BasicDBObject("testId", i));
-//            MongoController.getInstance().findOneBridge(dbName, colName, new BasicDBObject("testId", i));
-            MongoController.getInstance().updateBridge(dbName, colName, new BasicDBObject("testId", i), new BasicDBObject("testId", i), true);
+            ApolloController.getInstance().publishMessage();
         }
 
         long t2 = System.currentTimeMillis();
