@@ -58,7 +58,6 @@ public class ClientHandler extends SimpleChannelInboundHandler<byte[]> {
         try {
             byte[] bytes = builder.sizedByteArray();
             ByteBuf byteBuf = Unpooled.directBuffer();
-            byteBuf.writeInt(4 + bytes.length);
             byteBuf.writeInt(mesgId);
             byteBuf.writeBytes(bytes);
             ChannelFuture future = channel.writeAndFlush(byteBuf);
