@@ -1,3 +1,7 @@
 Manifest-Version: 1.0
+<<<<<<< HEAD
 Main-Class: Mongo
+=======
+Main-Class: Main
+>>>>>>> c152a251bb4100f8291862c0f502a08d5887505d
 
