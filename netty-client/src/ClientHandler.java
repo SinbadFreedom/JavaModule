@@ -22,13 +22,9 @@ public class ClientHandler extends SimpleChannelInboundHandler<byte[]> {
     }
 
     @Override
-    public void channelActive(ChannelHandlerContext ctx) {
+    public void channelActive(ChannelHandlerContext ctx) throws Exception {
         channel = ctx.channel();
-        try {
-            this.sendLogin(100);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        this.sendLogin(100);
     }
 
     @Override
@@ -43,6 +39,8 @@ public class ClientHandler extends SimpleChannelInboundHandler<byte[]> {
         int length = buffer.getInt();
         int msgId = buffer.getInt();
         LogUtil.LOGGER.info("[messageReceived]: length " + length + " msgId " + msgId);
+        /** resend*/
+        this.sendLogin(100);
     }
 
     public void sendLogin(int accountId) throws Exception {

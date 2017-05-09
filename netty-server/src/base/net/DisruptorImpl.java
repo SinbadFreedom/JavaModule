@@ -8,6 +8,7 @@ import com.lmax.disruptor.RingBuffer;
 import com.lmax.disruptor.dsl.Disruptor;
 import com.lmax.disruptor.dsl.ProducerType;
 import com.lmax.disruptor.util.DaemonThreadFactory;
+import io.netty.channel.Channel;
 
 import java.nio.ByteBuffer;
 
@@ -29,12 +30,12 @@ public class DisruptorImpl {
         return sessionDisruptor;
     }
 
-    public void publish(int messageId, ByteBuffer buffer) {
+    public void publish(int messageId, ByteBuffer buffer, Channel channel) {
         RingBuffer<MessageEvent> ringBuffer = DisruptorImpl.getInstance().getSessionDisruptor().getRingBuffer();
         long sequence = ringBuffer.next();
         try {
             MessageEvent event = ringBuffer.get(sequence);
-            event.init(messageId, buffer);
+            event.init(messageId, buffer, channel);
         } catch (Exception e) {
             e.printStackTrace();
         } finally {

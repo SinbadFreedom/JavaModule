@@ -48,11 +48,6 @@ public final class SocketServer implements Runnable {
         new Thread(SocketServer.getInstance(), "SocketServer-thread").start();
     }
 
-    public void closeServer() {
-        bossGroup.shutdownGracefully();
-        workerGroup.shutdownGracefully();
-    }
-
     private static class SingletonHolder {
         public final static SocketServer instance = new SocketServer();
     }

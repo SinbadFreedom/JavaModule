@@ -26,6 +26,6 @@ public class SocketServerHandler extends SimpleChannelInboundHandler<byte[]> {
         int messageId = byteBuffer.getInt();
 
         LogUtil.LOGGER.info("[messageReceived ] length " + length + " messageId " + messageId);
-        DisruptorImpl.getInstance().publish(messageId, byteBuffer);
+        DisruptorImpl.getInstance().publish(messageId, byteBuffer, ctx.channel());
     }
 }
