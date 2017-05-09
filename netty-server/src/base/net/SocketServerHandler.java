@@ -3,7 +3,6 @@ package base.net;
 
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
-import util.LogUtil;
 
 import java.nio.ByteBuffer;
 
@@ -25,7 +24,7 @@ public class SocketServerHandler extends SimpleChannelInboundHandler<byte[]> {
         int length = byteBuffer.getInt();
         int messageId = byteBuffer.getInt();
 
-        LogUtil.LOGGER.info("[messageReceived ] length " + length + " messageId " + messageId);
+        SocketServer.IN_COUNT.addAndGet(1);
         DisruptorImpl.getInstance().publish(messageId, byteBuffer, ctx.channel());
     }
 }

@@ -6,7 +6,6 @@ import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 import protocol.InLogin;
-import util.LogUtil;
 
 import java.nio.ByteBuffer;
 
@@ -38,7 +37,6 @@ public class ClientHandler extends SimpleChannelInboundHandler<byte[]> {
         ByteBuffer buffer = ByteBuffer.wrap(bytes);
         int length = buffer.getInt();
         int msgId = buffer.getInt();
-        LogUtil.LOGGER.info("[messageReceived]: length " + length + " msgId " + msgId);
         /** resend*/
         this.sendLogin(100);
     }

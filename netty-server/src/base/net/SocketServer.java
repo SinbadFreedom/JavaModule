@@ -8,7 +8,11 @@ import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import util.LogUtil;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 public final class SocketServer implements Runnable {
+
+    public static AtomicInteger IN_COUNT = new AtomicInteger();
 
     public static int SERVER_PORT = 23456;
     private EventLoopGroup bossGroup;

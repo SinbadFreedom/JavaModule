@@ -13,7 +13,7 @@ public class SocketServerInitializer extends ChannelInitializer<SocketChannel> {
     public void initChannel(SocketChannel ch) throws Exception {
         ChannelPipeline pipeline = ch.pipeline();
         // Decoders
-        pipeline.addLast("lengthDecoder", new LengthFieldBasedFrameDecoder(256, 0, 4));
+        pipeline.addLast("lengthDecoder", new LengthFieldBasedFrameDecoder(128, 0, 4));
         pipeline.addLast("frameEncoder", new LengthFieldPrepender(4, false));
         pipeline.addLast("byteDecoder", new ByteArrayDecoder());
         pipeline.addLast("handler", new SocketServerHandler());
