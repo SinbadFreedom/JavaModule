@@ -9,10 +9,7 @@
       <module fileurl="file://$PROJECT_DIR$/netty-server/netty-server.iml" filepath="$PROJECT_DIR$/netty-server/netty-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/redis/redis.iml" filepath="$PROJECT_DIR$/redis/redis.iml" />
       <module fileurl="file://$PROJECT_DIR$/shutDownHandler/shutDownHandler.iml" filepath="$PROJECT_DIR$/shutDownHandler/shutDownHandler.iml" />
-<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/zookeeper/zookeeper.iml" filepath="$PROJECT_DIR$/zookeeper/zookeeper.iml" />
-=======
->>>>>>> c152a251bb4100f8291862c0f502a08d5887505d
     </modules>
   </component>
 </project>
