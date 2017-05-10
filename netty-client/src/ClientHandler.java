@@ -37,7 +37,7 @@ public class ClientHandler extends SimpleChannelInboundHandler<byte[]> {
         ByteBuffer buffer = ByteBuffer.wrap(bytes);
         int length = buffer.getInt();
         int msgId = buffer.getInt();
-        /** resend*/
+//        /** resend*/
         this.sendLogin(100);
     }
 
