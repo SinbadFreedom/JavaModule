@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="netty-client:jar">
+    <output-path>$PROJECT_DIR$/output/artifacts/</output-path>
+    <root id="archive" name="netty-client.jar">
+      <element id="module-output" name="netty-client" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/netty-client/lib/log4j-1.2.15.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/netty-client/lib/netty-all-5.0.0.Alpha1.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

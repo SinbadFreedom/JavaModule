@@ -10,11 +10,15 @@ import io.netty.handler.codec.LengthFieldPrepender;
 import io.netty.handler.codec.bytes.ByteArrayDecoder;
 import util.LogUtil;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 public class ClientSocket {
     public static final int CONNECT_LOAD_BALANCE_TIME_OUT = 60 * 1000;
 
     public static String SERVER_IP = "127.0.0.1";
     public static int SERVER_PORT = 23456;
+
+    public static AtomicInteger IN_COUNT = new AtomicInteger();
 
     private ClientHandler clientHandler;
 

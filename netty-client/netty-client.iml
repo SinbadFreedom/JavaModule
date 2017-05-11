@@ -16,6 +16,7 @@
         <JAVADOC />
         <SOURCES>
           <root url="jar://$USER_HOME$/.ideaLibSources/netty-all-5.0.0.Alpha1-sources.jar!/" />
+          <root url="jar://$USER_HOME$/.ideaLibSources/log4j-1.2.15-sources.jar!/" />
         </SOURCES>
         <jarDirectory url="file://$MODULE_DIR$/lib" recursive="false" />
       </library>

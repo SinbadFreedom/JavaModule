@@ -51,6 +51,7 @@ public class ClientHandler extends SimpleChannelInboundHandler<byte[]> {
     }
 
     private void send(int mesgId, FlatBufferBuilder builder) {
+        ClientSocket.IN_COUNT.addAndGet(1);
         try {
             byte[] bytes = builder.sizedByteArray();
             ByteBuf byteBuf = Unpooled.directBuffer();
